@@ -1,7 +1,7 @@
  $base-color: #330B55;
  $keys-color: #A12626;
  $orange: #FB8E21;
- $grey: #9B9B9B;
+ $grey: #b5b4b4;
  $font-slab: "Josefin Slab", serif;
 
 
@@ -109,7 +109,6 @@
          grid-template-rows: repeat(6, 1fr);
          min-height: 70%;
 
-
          h1 {
              grid-column-start: 1;
              grid-column-end: 4;
@@ -123,7 +122,6 @@
          }
 
          button {
-
              position: relative;
              grid-column-start: 3;
              grid-row-start: 6;
@@ -173,6 +171,7 @@
          }
 
          h4 {
+             text-transform: capitalize;
              font-size: 16px;
              color: $orange;
              width: 80%;
@@ -188,6 +187,9 @@
              gap: 4rem;
 
              .instrument {
+                 transition: scale .2s ease-in-out;
+                 cursor: pointer;
+
                  h3 {
                      text-transform: capitalize;
                      margin-bottom: 1rem;
@@ -198,6 +200,66 @@
                      width: 100px;
                      height: 100px;
                      object-fit: contain;
+                 }
+
+             }
+
+             .instrument:hover {
+                 scale: 1.2;
+             }
+         }
+     }
+ }
+
+ //  effects
+ .effects {
+     background-color: $base-color;
+     padding: 2rem 0rem;
+
+     &__inner {
+
+         h3 {
+             text-transform: capitalize;
+             text-align: center;
+             font-size: 36px;
+             color: white;
+             padding: 3rem 0rem;
+         }
+
+         ul {
+             display: grid;
+             grid-template-columns: 1fr 1fr;
+             grid-column: 1fr 1fr;
+             gap: 4rem;
+         }
+     }
+
+     &__effect {
+         list-style: none;
+
+         h4 {
+             text-transform: capitalize;
+             font-size: 1.5rem;
+             text-align: center;
+             color: $orange;
+             padding: 1rem;
+
+         }
+
+         &-container {
+             display: flex;
+             justify-content: space-between;
+             width: 430px;
+             height: 300px;
+
+             p {
+                 color: $grey;
+                 width: 230px;
+             }
+
+             &--reverse {
+                 img {
+                     order: 2;
                  }
              }
          }
