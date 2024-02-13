@@ -1,0 +1,149 @@
+ $base-color: #330B55;
+ $keys-color: #A12626;
+ $orange: #FB8E21;
+ $grey: #9B9B9B;
+ $font-slab: "Josefin Slab", serif;
+
+
+ *,
+ *::before,
+ *::after {
+     box-sizing: content-box;
+ }
+
+ * {
+     margin: 0;
+     font-family: 'Jura', sans-serif;
+ }
+
+ body {
+     line-height: 1.5;
+     -webkit-font-smoothing: antialiased;
+ }
+
+ input,
+ button,
+ textarea,
+ select {
+     font: inherit;
+ }
+
+
+ p,
+ h1,
+ h2,
+ h3,
+ h4,
+ h5,
+ h6 {
+     overflow-wrap: break-word;
+ }
+
+ #root,
+ #__next {
+     isolation: isolate;
+ }
+
+ .shell {
+     width: 1000px;
+     height: 100%;
+     padding: 0rem 1rem;
+     margin: auto;
+ }
+
+ .header {
+     position: relative;
+     display: flex;
+     justify-content: flex-end;
+     width: 100%;
+
+
+     ul {
+         position: absolute;
+         display: flex;
+         justify-content: space-between;
+         z-index: 2;
+         width: 50%;
+         padding: 1rem 0rem;
+
+         li {
+             font-size: 1.5rem;
+             color: $base-color;
+             list-style: none;
+             text-decoration: none;
+             transition: color .1s ease-in-out;
+         }
+
+         li:hover {
+             color: $orange;
+         }
+     }
+ }
+
+ // Hero
+ .hero {
+     position: relative;
+     width: 100%;
+     height: 100vh;
+
+     img {
+         position: absolute;
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+     }
+
+     &__inner {
+         position: relative;
+         z-index: 1;
+         display: grid;
+         grid-template-columns: repeat(4, 1fr);
+         grid-template-rows: repeat(6, 1fr);
+
+
+         h1 {
+             grid-column-start: 1;
+             grid-column-end: 4;
+             grid-row-start: 3;
+             grid-row-end: 6;
+             font-family: $font-slab;
+             font-size: 62px;
+             line-height: 4rem;
+             color: $base-color;
+
+         }
+
+         button {
+             position: relative;
+             grid-column-start: 3;
+             grid-row-start: 6;
+             font-size: 1.5rem;
+             text-align: left;
+             border-radius: 20px;
+             width: 80px;
+             height: 50px;
+             background: $base-color;
+             color: $orange;
+             border: none;
+             padding-left: 2rem;
+             padding-bottom: .3rem;
+             transition: padding .2s ease-in-out;
+
+             svg {
+                 display: none;
+             }
+         }
+
+         button:hover {
+             padding-left: 5rem;
+
+             svg {
+                 position: absolute;
+                 left: 20%;
+                 top: 30%;
+                 display: block
+             }
+
+         }
+     }
+ }
